@@ -1,0 +1,307 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f9faf8;
+  color: #111;
+}
+
+.container {
+  max-width: 400px;
+  margin: 80px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-top: 10px;
+}
+
+.description {
+  font-size: 14px;
+  color: #444;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+  background-color: #eee;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 20px auto;
+  width: fit-content;
+}
+
+.tab {
+  padding: 10px 30px;
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #555;
+}
+
+.tab.active {
+  background-color: #ffa94d;
+  color: #fff;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button-container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.button-container button:hover {
+  background-color: #f0f0f0;
+}
+
+.icon {
+  font-size: 18px;
+}
+
+.footer {
+  margin-top: 30px;
+  font-size: 12px;
+  color: #777;
+}
+
+.footer a {
+  color: #555;
+  text-decoration: underline;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f7f7f7;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+}
+
+.user-info {
+  margin-bottom: 20px;
+}
+
+.user-info span {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 10px 0;
+  cursor: pointer;
+  color: #333;
+}
+
+.menu .active {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.submenu-title {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.submenu {
+  padding-left: 15px;
+  color: #555;
+}
+
+.content {
+  flex: 1;
+  padding: 40px;
+  background-color: #fff;
+}
+
+.api-ref {
+  font-size: 0.85rem;
+  color: #999;
+  margin-bottom: 40px;
+}
+
+.empty-state {
+  text-align: center;
+  border: 1px solid #eee;
+  padding: 60px;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.empty-state .icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.create-btn {
+  background-color: #ff7a45;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.dashboard {
+  display: flex;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  width: 250px;
+  background: #f5f5f5;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  height: 100vh;
+}
+
+.sidebar .user-section h3 {
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.sidebar li.active {
+  font-weight: bold;
+  color: #ff6600;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 30px;
+}
+
+.subscription-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-actions button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.header-actions .pro-button {
+  background: #ff6600;
+  color: #fff;
+  border: none;
+}
+
+.seat-assignment {
+  margin: 30px 0;
+}
+
+.seat-assignment label {
+  display: block;
+  margin: 10px 0;
+}
+
+.search-and-tabs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.search-and-tabs input {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+}
+
+.tabs button,
+.filter-tabs button {
+  padding: 6px 10px;
+  background: #eee;
+  border: 1px solid #ccc;
+}
+
+.tabs,
+.filter-tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-tabs button.active {
+  background: #ff6600;
+  color: #fff;
+  border: none;
+}
+
+.invite-btn {
+  margin-left: auto;
+  background: #ff6600;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+}
+
+.no-data {
+  text-align: center;
+  margin-top: 50px;
+  color: #888;
+}
+
+.no-data .icon {
+  font-size: 40px;
+}
