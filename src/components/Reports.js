@@ -1,19 +1,23 @@
 import React from "react";
 import "../App.css";
 import SideFilter from "./SideFilter";
+import { GoPlusCircle } from "react-icons/go";
 
 const Reports = () => {
   return (
     <div style={{ display: "flex" }}>
       <SideFilter />
-      <div className="content">
-        <h2>Reports</h2>
-        <p className="api-ref">API Reference</p>
-        <div className="empty-state">
-          <div className="icon">📄</div>
-          <h3>Create Your First Project</h3>
-          <p>Let's Tell Your Data Story Together</p>
-          <button className="create-btn">+ Create API Key</button>
+      <div className="content ">
+        <h2 className="mb-4">Reports</h2>
+        <div className="empty-state flex-col ">
+          <div>
+            <div className="icon">📄</div>
+            <h3>Create Your first report</h3>
+            <p>Let's tell your data's Story Together</p>
+          </div>
+          <button className="create-btn flex justify-between items-center ">
+            <GoPlusCircle className="mr-2" /> Create Report
+          </button>
         </div>
       </div>
     </div>

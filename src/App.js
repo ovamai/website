@@ -15,6 +15,8 @@ import SubscriptionPage from "./components/SubscriptionPage";
 import OrganizationSettings from "./components/OrganizationSettings";
 import ApiKeys from "./components/ApiKey";
 import PrivateRoute from "./components/PrivateRoute";
+import ConfigurationSettings from "./components/Configuration";
+import LearningsPage from "./components/learnings";
 import { Route, useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
@@ -50,8 +52,10 @@ const AppRoutes = () => {
         path="/organizationSettingConfig"
         component={OrganizationSettings}
       />
+      <PrivateRoute path="/api-keys" component={ApiKeys} />
+      <PrivateRoute path="/learnings" component={LearningsPage} />
       <PrivateRoute path="/reports" component={Reports} />
-      <PrivateRoute path="/apiKey" component={ApiKeys} />
+      <PrivateRoute path="/configuration" component={ConfigurationSettings} />
       <PrivateRoute path="/subscription" component={SubscriptionPage} />
       <Route path="/login" component={Login} />
     </Switch>
