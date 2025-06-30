@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Settings } from "lucide-react";
 import SideFilter from "./SideFilter";
+import GenerateBadgeModal from "./GenerateBadgeModal";
 import RepositorySettings from "./RepoSettingsPage";
 
 const Repositories = () => {
@@ -10,6 +11,8 @@ const Repositories = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedRepo, setSelectedRepo] = useState(null);
   const [error, setError] = useState(null);
+  const [showBadgeModal, setShowBadgeModal] = useState(false);
+  const [badgeRepo, setBadgeRepo] = useState("");
 
   const accessToken = localStorage.getItem("oauthToken");
   const provider = localStorage.getItem("oauthProvider");
@@ -103,7 +106,7 @@ const Repositories = () => {
               <div>
                 <h1 className="text-2xl font-semibold">Repositories</h1>
                 <p className="text-sm text-gray-500">
-                  List of repositories accessible to CodeRabbit.
+                  List of repositories accessible to OvamAI.
                 </p>
               </div>
               <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded text-sm">
@@ -138,12 +141,10 @@ const Repositories = () => {
                   {paginatedRepos.map((repo, index) => (
                     <li
                       key={index}
-                      className="flex justify-between items-center py-3 px-2"
+                      className="group flex justify-between items-center py-3 px-2 hover:bg-gray-50 rounded-md transition-colors"
                     >
                       <div className="flex items-center gap-2">
-                        <span
-                          className="text-sm font-medium text-gray-900 cursor-pointer truncate max-w-xs"
-                        >
+                        <span className="text-sm font-medium text-gray-900">
                           {repo.name.split("/")[1]}
                         </span>
                         {repo.public && (
@@ -152,7 +153,18 @@ const Repositories = () => {
                           </span>
                         )}
                       </div>
+
                       <div className="flex items-center space-x-3">
+                        <button
+                          className="hidden group-hover:inline-block px-3 py-1 text-sm font-medium text-gray-700 bg-white border mr-5 border-gray-200 rounded-full shadow-sm hover:bg-gray-100 transition"
+                          onClick={() => {
+                            setBadgeRepo(repo.name);
+                            setShowBadgeModal(true);
+                          }}
+                        >
+                          Generate Badge
+                        </button>
+
                         <button onClick={() => setSelectedRepo(repo.name)}>
                           <Settings className="w-4 h-4 text-gray-500 hover:text-gray-700 cursor-pointer" />
                         </button>
@@ -197,9 +209,7 @@ const Repositories = () => {
                     <button
                       className="px-2 py-1 text-gray-600"
                       onClick={() =>
-                        setCurrentPage((prev) =>
-                          Math.min(prev + 1, totalPages)
-                        )
+                        setCurrentPage((prev) => Math.min(prev + 1, totalPages))
                       }
                       disabled={currentPage === totalPages}
                     >
@@ -218,6 +228,11 @@ const Repositories = () => {
             )}
           </>
         )}
+        <GenerateBadgeModal
+          isOpen={showBadgeModal}
+          onClose={() => setShowBadgeModal(false)}
+          repoName={badgeRepo}
+        />
       </main>
     </div>
   );
