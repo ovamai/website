@@ -1,7 +1,8 @@
 // components/GenerateBadgeModal.js
-import React from "react";
+import { useState, React } from "react";
 
 const GenerateBadgeModal = ({ isOpen, onClose, repoName }) => {
+  const [copy, SetCopy] = useState(false);
   if (!isOpen) return null;
 
   const badgeURL = `https://img.shields.io/coderabbit/reviews/${repoName}`;
@@ -39,13 +40,14 @@ const GenerateBadgeModal = ({ isOpen, onClose, repoName }) => {
           <button
             className="ml-2 text-blue-600 hover:text-blue-800 text-sm"
             onClick={() => {
+              SetCopy(true);
               navigator.clipboard.writeText(markdownSnippet);
             }}
           >
             📋
           </button>
         </div>
-
+        {copy && <p className="text-right text-green-500">Copied!!</p>}
         <div className="mt-4 text-right">
           <button
             onClick={onClose}
