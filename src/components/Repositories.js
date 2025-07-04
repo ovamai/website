@@ -143,19 +143,25 @@ const Repositories = () => {
                       key={index}
                       className="group flex justify-between items-center py-3 px-2 hover:bg-gray-50 rounded-md transition-colors"
                     >
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2 w-1/2 min-w-[200px]">
                         <span className="text-sm font-medium text-gray-900">
                           {repo.name.split("/")[1]}
                         </span>
-                        {repo.public && (
+                        {repo.public? (
                           <span className="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded-full">
                             Public
                           </span>
-                        )}
+                        ):
+                          <span className="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded-full">
+                            Private
+                          </span>
+                        
+                        
+                        }
                       </div>
 
-                      <div className="flex items-center space-x-3">
-                        <button
+                      <div className="flex items-center gap-2 w-1/3">
+                           <button
                           className="hidden group-hover:inline-block px-3 py-1 text-sm font-medium text-gray-700 bg-white border mr-5 border-gray-200 rounded-full shadow-sm hover:bg-gray-100 transition"
                           onClick={() => {
                             setBadgeRepo(repo.name);
@@ -165,10 +171,17 @@ const Repositories = () => {
                           Generate Badge
                         </button>
 
+                      </div>
+
+                      <div className="flex justify-end items-center space-x-3 w-1/6 ">
+                     
                         <button onClick={() => setSelectedRepo(repo.name)}>
                           <Settings className="w-4 h-4 text-gray-500 hover:text-gray-700 cursor-pointer" />
                         </button>
                       </div>
+
+
+
                     </li>
                   ))}
                 </ul>

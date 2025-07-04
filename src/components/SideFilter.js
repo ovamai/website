@@ -64,7 +64,7 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
 
   const menuItems = [
     { id: "repositories", label: "Repositories", icon: FolderOpen },
-    { id: "dashboard", label: "Dashboard", icon: BarChart3 },
+    { id: "", label: "Dashboard", icon: BarChart3 },
     { id: "integrations", label: "Integrations", icon: Puzzle },
     { id: "reports", label: "Reports", icon: FileText },
     { id: "learnings", label: "Learnings", icon: GraduationCap },

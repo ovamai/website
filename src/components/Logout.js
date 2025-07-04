@@ -33,11 +33,11 @@ function Logout() {
   // Disable back button caching
 window.history.pushState(null, null, window.location.href);
 window.onpopstate = function () {
-  window.location.href = '/';
+  window.location.href = '/login';
 };
 
   alert("You have been logged out from the app. Please logout manually from the provider if needed.");
-  window.location.href = '/';
+  window.location.href = '/login';
 
 
 

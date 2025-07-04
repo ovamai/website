@@ -47,7 +47,7 @@ const AppRoutes = () => {
   return (
     <Switch>
      {/* <Route exact path="/" component={Index} /> */}
-      <Route path="/login" component={SignUpPage} />
+      <Route exact path="/login" component={SignUpPage} />
       <PrivateRoute exact path="/" component={Dashboard} />
       <PrivateRoute path="/settings" component={Settings} />
       <PrivateRoute path="/repositories" component={Repositories} />
