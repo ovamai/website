@@ -27,13 +27,14 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
   const { pathname, search } = useLocation();
 
   useEffect(() => {
-    const params = new URLSearchParams(search);
+    const params = new URLSearchParams(window.location.search);
     const tokenFromURL = params.get("token");
     const accessTokenFromURL = params.get("accessToken");
     const providerFromURL = params.get("provider");
 
     if (tokenFromURL) {
       localStorage.setItem("ovamToken", tokenFromURL);
+      console.log(tokenFromURL);
     }
     if (accessTokenFromURL && providerFromURL) {
       localStorage.setItem("oauthToken", accessTokenFromURL);
@@ -156,9 +157,8 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
             <div className="text-sm font-semibold">{user || "User"}</div>
             <div className="text-xs text-gray-500">role</div>
           </div>
-          <button>
-            <Logout />
-          </button>
+
+          <Logout />
         </div>
       </div>
     </aside>

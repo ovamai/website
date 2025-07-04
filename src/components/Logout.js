@@ -6,8 +6,11 @@ function Logout() {
     localStorage.removeItem("oauthProvider");
     localStorage.removeItem("ovamToken");
 
-    window.open("https://github.com/logout", "_blank");
-    alert("You've been logged out from the app. Please logout from the new tab if needed.");
+    window.open("https://id.atlassian.com/logout?");
+
+    alert(
+      "You've been logged out from the app. Please logout from the new tab if needed."
+    );
     window.location.href = "/login";
   };
 

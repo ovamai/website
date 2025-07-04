@@ -59,7 +59,7 @@ function SignupPage() {
       </div>
 
       <p className="footer">
-        By continuing, you agree to the <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Policy</a> applicable to CodeRabbit.
+        By continuing, you agree to the <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Policy</a> applicable to Ovam AI.
       </p>
     </div>
   );
