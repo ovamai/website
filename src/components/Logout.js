@@ -2,15 +2,21 @@ import { LogOut } from "lucide-react";
 
 function Logout() {
   const handleLogout = () => {
+    const provider = localStorage.getItem("oauthProvider");
+
+    // Remove tokens
     localStorage.removeItem("oauthToken");
     localStorage.removeItem("oauthProvider");
     localStorage.removeItem("ovamToken");
 
-    window.open("https://id.atlassian.com/logout?");
+    // Open provider-specific logout if applicable
+    if (provider === "bitbucket") {
+      window.open("https://id.atlassian.com/logout?", "_blank");
+    } else if (provider === "github") {
+      window.open("https://github.com/logout", "_blank");
+    }
 
-    alert(
-      "You've been logged out from the app. Please logout from the new tab if needed."
-    );
+    // Redirect to login
     window.location.href = "/login";
   };
 

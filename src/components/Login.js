@@ -25,7 +25,8 @@ function SignupPage() {
       <h1 className="title">ovam ai</h1>
       <h2 className="subtitle">Welcome to ovam ai</h2>
       <p className="description">
-        Get a 14-day free trial for your entire team by signing up with your Git provider.
+        Get a 14-day free trial for your entire team by signing up with your Git
+        provider.
       </p>
 
       <div className="tab-container">
@@ -59,7 +60,8 @@ function SignupPage() {
       </div>
 
       <p className="footer">
-        By continuing, you agree to the <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Policy</a> applicable to Ovam AI.
+        By continuing, you agree to the <a href="/terms">Terms of Use</a> and{" "}
+        <a href="/privacy">Privacy Policy</a> applicable to OvamAI.
       </p>
     </div>
   );
