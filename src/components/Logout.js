@@ -9,15 +9,40 @@ function Logout() {
     localStorage.removeItem("oauthProvider");
     localStorage.removeItem("ovamToken");
 
-    // Open provider-specific logout if applicable
-    if (provider === "bitbucket") {
-      window.open("https://id.atlassian.com/logout?", "_blank");
-    } else if (provider === "github") {
-      window.open("https://github.com/logout", "_blank");
-    }
+   switch (provider) {
+    case 'github':
+      window.open('https://github.com/logout', '_blank');
+      break;
+    case 'gitlab':
+      window.open('https://gitlab.com', '_blank'); // can't log out directly
+      break;
+    case 'bitbucket':
+      window.open('https://bitbucket.org/account/settings/', '_blank'); // manual logout
+      break;
+    case 'azure':
+      localStorage.removeItem('oauthToken');
+  localStorage.removeItem('ovamToken');
+  localStorage.removeItem('oauthProvider');
 
-    // Redirect to login
-    window.location.href = "/login";
+      window.location.href = 'https://login.microsoftonline.com/common/oauth2/v2.0/logout?post_logout_redirect_uri=http://localhost:3000/';
+      return; // skip alert and redirect below since we're navigating away
+    default:
+      break;
+  }
+
+  // Disable back button caching
+window.history.pushState(null, null, window.location.href);
+window.onpopstate = function () {
+  window.location.href = '/';
+};
+
+  alert("You have been logged out from the app. Please logout manually from the provider if needed.");
+  window.location.href = '/';
+
+
+
+
+
   };
 
   return (

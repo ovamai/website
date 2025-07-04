@@ -21,7 +21,7 @@ import OrganizationSettings from "./components/OrganizationSettings";
 import ApiKeys from "./components/ApiKey";
 import ConfigurationSettings from "./components/Configuration";
 import LearningsPage from "./components/learnings";
-import Index from "./components/HomePage";
+//import Index from "./components/HomePage";
 import PrivateRoute from "./components/PrivateRoute";
 
 const queryClient = new QueryClient();
@@ -46,9 +46,9 @@ const AppRoutes = () => {
 
   return (
     <Switch>
-      <Route exact path="/" component={Index} />
+     {/* <Route exact path="/" component={Index} /> */}
       <Route path="/login" component={SignUpPage} />
-      <PrivateRoute exact path="/dashboard" component={Dashboard} />
+      <PrivateRoute exact path="/" component={Dashboard} />
       <PrivateRoute path="/settings" component={Settings} />
       <PrivateRoute path="/repositories" component={Repositories} />
       <PrivateRoute path="/integrations" component={Integrations} />
